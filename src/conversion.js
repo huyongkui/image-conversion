@@ -20,6 +20,7 @@
     return new Promise((resolve, reject) => {
       const img = new Image();
       img.onload = () => resolve(img);
+      img.setAttribute("crossOrigin",'Anonymous');
       img.onerror = () => reject(new Error('urltoImage(): Image failed to load, please check the image URL'));
       img.src = url;
     });
